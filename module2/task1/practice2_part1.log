@@ -1,0 +1,97 @@
+#useradd user1 -m -s /bin/bash
+#passwd user1
+#adduser user2
+#adduser user3
+#usermod -s /usr/sbin/nologin user3
+
+#su user3
+This account is currently not available.
+#su user3 -s /bin/bash
+
+#sudo groupadd group1
+
+#sudo usermod -a -G group1 user1
+
+#sudo usermod -a -G group1 user2
+
+#sudo usermod -a -G group1 user3
+
+
+#cat /etc/group | grep group1
+group1:x:1004:user1,user2,user3
+#mkdir ../opt/share
+
+#chown :group1 ../opt/share
+#ls -l ../opt
+total 4 drwxr-xr-x 2 root group1 4096 Mar 15 10:13 share
+
+для user1 в домашней директории /home/user1 в файле .profile раскомментируем
+и поменяем значение umask на 004
+#chmod g+s /opt/share
+
+drwxr-sr-x 2 root group1 4096 Mar 15 10:13 share
+
+#chmod g=rwx /opt/share
+
+
+drwxrwsr-x 2 root group1 4096 Mar 15 10:13 share
+
+используя su - создаём и удаляем файлы в opt/share. Ошибки нет из-за
+настроенных ранее прав доступа. 
+#chmod +t /opt/share
+
+после установки sticky bit для /opt/share и захода под именем user1 попытка
+удаления файла дает ошибку. Удалить file3 может только создатель (user3)
+rm: cannot remove 'file3.txt': Operation not permitted
+chage -E 2025-03-25 user1
+
+chage -E 2025-03-25 user2
+
+chage -E 2025-03-25 user3
+
+rsync -r /etc /root/etc-backup
+tar -cf archieve.tar etc_backup/
+gzip -c archieve.tar>archieve.tar.gz
+7z a archieve.tar.7z archieve.tar
+
+#root@eltex-practice2-pg1-v17:~# du -sh archieve.tar
+#3.0M	archieve.tar
+#root@eltex-practice2-pg1-v17:~# du -sh archieve.tar.7z
+#464K	archieve.tar.7z
+#root@eltex-practice2-pg1-v17:~# du -sh archieve.tar.bz2
+#536K	archieve.tar.bz2
+#root@eltex-practice2-pg1-v17:~# du -sh archieve.tar.gz
+#564K	archieve.tar.gz
+#root@eltex-practice2-pg1-v17:~# du -sh etc_backup/
+#5.8M	etc_backup/
+#rsync -azvh /etc/ /root/etc_backup
+
+#sending incremental file list
+#./
+#motd
+#update-motd.d/
+
+#sent 69.75K bytes  received 291 bytes  140.07K bytes/sec
+#total size is 2.36M  speedup is 33.73
+cat etc_backup/motd
+#Саблин Максим
+#16.03.2025 12:47
+
+tar -Afz archieve.tar.gz etc_backup/motd
+root@eltex-practice2-pg1-v17:~# tar -df archieve.tar.bz -C /root
+#etc_backup/motd: Mod time differs
+#etc_backup/motd: Size differs
+
+mkdir etc_backup_gzip
+mkdir etc_backup_7zip
+tar -xvf archieve.tar.gz -C /root/etc_backup_gzip
+
+tar -uvf archieve.tar etc_backup/
+#etc_backup/motd
+
+7z x archieve.tar.7z -o./etc_backup_7zip
+~/etc_backup_7zip# tar -xvf archieve.tar 
+
+diff etc_backup_7zip/etc_backup/motd etc_backup_gzip/etc_backup/motd
+#1a2
+#> 15.03.2025

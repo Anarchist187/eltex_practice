@@ -1,0 +1,143 @@
+git config --global user.name "Anarchist187"
+git config --global user.email "mxsblnnn@gmail.com"
+git config --global init.defaultBranch main
+apt update
+Hit:1 http://ru.archive.ubuntu.com/ubuntu noble InRelease
+Get:2 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+Get:3 http://ru.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+Get:4 http://ru.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+Get:5 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [919 kB]
+Get:6 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 Components [151 kB]
+Get:7 http://ru.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Components [212 B]
+Get:8 http://ru.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1,037 kB]
+Get:9 http://ru.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Components [364 kB]
+Get:10 http://security.ubuntu.com/ubuntu noble-security/main amd64 Components [9,028 B]
+Get:11 http://ru.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Components [940 B]
+Get:12 http://ru.archive.ubuntu.com/ubuntu noble-backports/main amd64 Components [208 B]
+Get:13 http://ru.archive.ubuntu.com/ubuntu noble-backports/restricted amd64 Components [216 B]
+Get:14 http://ru.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Components [20.0 kB]
+Get:15 http://ru.archive.ubuntu.com/ubuntu noble-backports/multiverse amd64 Components [212 B]
+Get:16 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Components [212 B]
+Get:17 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Components [52.0 kB]
+Get:18 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Components [208 B]
+Fetched 2,932 kB in 1s (2,765 kB/s) 
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+7 packages can be upgraded. Run 'apt list --upgradable' to see them.
+root@eltex-practice2-pg1-v17:/home# apt install git gh
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+git is already the newest version (1:2.43.0-1ubuntu7.2).
+git set to manually installed.
+The following NEW packages will be installed:
+  gh
+0 upgraded, 1 newly installed, 0 to remove and 7 not upgraded.
+Need to get 8,826 kB of archives.
+After this operation, 45.4 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://ru.archive.ubuntu.com/ubuntu noble-updates/universe amd64 gh amd64 2.45.0-1ubuntu0.2 [8,826 kB]
+Fetched 8,826 kB in 1s (10.4 MB/s)
+Selecting previously unselected package gh.
+(Reading database ... 86720 files and directories currently installed.)
+Preparing to unpack .../gh_2.45.0-1ubuntu0.2_amd64.deb ...
+Unpacking gh (2.45.0-1ubuntu0.2) ...
+Setting up gh (2.45.0-1ubuntu0.2) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+Scanning processes...                                                           
+Scanning linux images...                                                        
+
+Running kernel seems to be up-to-date.
+
+No services need to be restarted.
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+
+
+
+ssh-keygen -t ed25519 -f ~/.ssh/Anarchist187
+Generating public/private ed25519 key pair.
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /root/.ssh/Anarchist187
+Your public key has been saved in /root/.ssh/Anarchist187.pub
+The key fingerprint is:
+SHA256:nKYep22dGfBAb4jRq/ILAhDN43/2VbWtcCa1SARB5BU root@eltex-practice2-pg1-v17
+The key's randomart image is:
++--[ED25519 256]--+
+|.o     . o=+E.   |
+| .+   . o. .. o  |
+|.. .   + +.. + + |
+|. .   ..=.o = = .|
+|.  .   .S= . = . |
+| .  o +o  +   .  |
+|  . .=o..o +     |
+|   . o.=o +      |
+|      +o.        |
++----[SHA256]-----+
+gh auth login -h github.com
+? What is your preferred protocol for Git operations on this host? SSH
+? Upload your SSH public key to your GitHub account? /root/.ssh/Anarchist187.pub
+? Title for your SSH key: eltex-practice2-pg1-v17
+? How would you like to authenticate GitHub CLI? Login with a web browser
+
+! First copy your one-time code: 77F2-5767
+Press Enter to open github.com in your browser... 
+! Failed opening a web browser at https://github.com/login/device
+  exec: "xdg-open,x-www-browser,www-browser,wslview": executable file not found in $PATH
+  Please try entering the URL in your browser manually
+✓ Authentication complete.
+- gh config set -h github.com git_protocol ssh
+✓ Configured git protocol
+! Authentication credentials saved in plain text
+✓ Uploaded the SSH key to your GitHub account: /root/.ssh/Anarchist187.pub
+✓ Logged in as Anarchist187
+
+
+gh auth setup-git --hostname github.com
+
+gh auth status 
+github.com
+  ✓ Logged in to github.com account Anarchist187 (/root/.config/gh/hosts.yml)
+  - Active account: true
+  - Git operations protocol: ssh
+  - Token: gho_************************************
+  - Token scopes: 'admin:public_key', 'gist', 'read:org', 'repo'
+
+gh repo create --public eltex_practice
+✓ Created repository Anarchist187/eltex_practice on GitHub
+  https://github.com/Anarchist187/eltex_practice
+
+echo "#практики eltex" >> README.md
+
+git init
+Initialized empty Git repository in /root/eltex_practice/.git/
+git add README.md
+
+git commit -m "first commit"
+[main (root-commit) f299f11] first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+git branch -M main
+
+git remote add origin https://github.com/Anarchist187/eltex_practice.git
+root@eltex-practice2-pg1-v17:~/eltex_practice# git status
+On branch main
+nothing to commit, working tree clean
+root@eltex-practice2-pg1-v17:~/eltex_practice# git push -u origin main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 237 bytes | 237.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Anarchist187/eltex_practice.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+root@eltex-practice2-pg1-v17:~/eltex_practice# mkdir -p module1/task1
+root@eltex-practice2-pg1-v17:~/eltex_practice# mkdir module1/task2
+root@eltex-practice2-pg1-v17:~/eltex_practice# mkdir module1/task3
