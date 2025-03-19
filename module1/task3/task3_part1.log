@@ -1,0 +1,130 @@
+user1@eltex-practice2-pg1-v17:/root$ ps -eo nlwp | tail -n +2 | awk '{if ($1!=1) num_threads += 1 } END { print num_threads }'
+11
+
+Прописываем топ, нажимаем клавишу f, в этом окне используя space активируем 
+и деактивируем нужные полы для вывода. Меняем их местами используя left/right
+
+user1@eltex-practice2-pg1-v17:~$ top
+
+Используя горячую клавишу f выбираем для отображения поле RUSER и используя 
+горячую клавишу s сортируем по этому полю.
+
+top - 10:16:03 up 4 days, 14:16,  4 users,  load average: 0.03, 0.01, 0.00
+Tasks: 131 total,   1 running, 118 sleeping,  12 stopped,   0 zombie
+%Cpu(s):  0.2 us,  0.0 sy,  0.0 ni, 99.8 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st 
+MiB Mem :   3916.0 total,   2807.6 free,    522.4 used,    850.1 buff/cache     
+MiB Swap:   3185.0 total,   3185.0 free,      0.0 used.   3393.7 avail Mem 
+
+    PID USER      PR  NI    VIRT  %CPU  %MEM     TIME+ COMMAND         RUSER    
+  17874 user1     20   0    8652   0.0   0.1   0:00.05 bash            user1    
+  17881 user1     20   0  167000   0.0   0.2   0:00.09 btop            user1    
+  17989 user1     20   0   11936   0.0   0.1   0:00.09 top             user1    
+  18052 user1     20   0   11936   0.0   0.1   0:00.00 top             user1    
+  18060 user1     20   0   11936   0.0   0.1   0:00.01 top             user1    
+  18061 user1     20   0   11936   0.0   0.1   0:00.00 top             user1    
+  18062 user1     20   0    9216   0.0   0.1   0:00.00 awk             user1    
+  18063 user1     20   0   11936   0.0   0.2   0:00.01 top             user1    
+  18064 user1     20   0    9216   0.0   0.1   0:00.00 awk             user1    
+  18065 user1     20   0   11936   0.0   0.1   0:00.00 top             user1    
+  18066 user1     20   0   11936   0.0   0.1   0:00.00 top             user1    
+  18070 user1     20   0   11936   0.0   0.1   0:00.02 top             user1    
+  18152 user1     20   0    8652   0.0   0.1   0:00.00 bash            user1    
+  18191 user1     20   0   11936   0.0   0.2   0:00.14 top             user1    
+  18336 user1     20   0    8652   0.0   0.1   0:00.00 bash            user1    
+  18346 root      20   0    9172   0.0   0.1   0:00.00 passwd          user1    
+  18347 user1     20   0   11936   0.0   0.1   0:00.04 top             user1    
+
+PID искомого процесса смены пароля, открытого из другого терминала - 18346
+
+user1@eltex-practice2-pg1-v17:~$ kill -15 18346
+user1@eltex-practice2-pg1-v17:~$ kill -2 18346
+user1@eltex-practice2-pg1-v17:~$ kill -3 18346
+user1@eltex-practice2-pg1-v17:~$ kill -9 18346
+
+После отправки сигнала 9 в терминале с запущенным процессом смены пароля 
+получаем сообщение
+#Changing password for user1.
+#Current password: Killed
+
+user1@eltex-practice2-pg1-v17:~$ vim ~/file_task3.txt
+Находясь в vim прожимаем ctrl+z
+
+#[1]+  Stopped                 vim ~/file_task3.txt
+
+user1@eltex-practice2-pg1-v17:~$ sleep 600
+#^Z
+#[2]+  Stopped                 sleep 600
+user1@eltex-practice2-pg1-v17:~$ jobs
+#[1]-  Stopped                 vim ~/file_task3.txt
+#[2]+  Stopped                 sleep 600
+
+Делаем задание sleep 600 фоновым
+user1@eltex-practice2-pg1-v17:~$ bg %2
+#[2]+ sleep 600 &
+
+Используя top определим pid команды sleep - 18445
+
+user1@eltex-practice2-pg1-v17:~$ renice 10 18445
+#18445 (process ID) old priority 0, new priority 10
+
+top - 10:37:41 up 4 days, 14:37,  4 users,  load average: 0.00, 0.00, 0.00
+Tasks: 135 total,   1 running, 119 sleeping,  15 stopped,   0 zombie
+%Cpu(s):  0.2 us,  0.0 sy,  0.0 ni, 99.8 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st 
+MiB Mem :   3916.0 total,   2798.4 free,    531.3 used,    850.4 buff/cache     
+MiB Swap:   3185.0 total,   3185.0 free,      0.0 used.   3384.7 avail Mem 
+
+    PID USER      PR  NI S  %CPU  %MEM     TIME+ COMMAND                   RUID 
+  18052 user1     20   0 T   0.0   0.1   0:00.00 top                       1001 
+  18060 user1     20   0 T   0.0   0.1   0:00.01 top                       1001 
+  18061 user1     20   0 T   0.0   0.1   0:00.00 top                       1001 
+  18062 user1     20   0 T   0.0   0.1   0:00.00 awk                       1001 
+  18063 user1     20   0 T   0.0   0.2   0:00.01 top                       1001 
+  18064 user1     20   0 T   0.0   0.1   0:00.00 awk                       1001 
+  18065 user1     20   0 T   0.0   0.1   0:00.00 top                       1001 
+  18066 user1     20   0 T   0.0   0.1   0:00.00 top                       1001 
+  18070 user1     20   0 T   0.0   0.1   0:00.02 top                       1001 
+  18191 user1     20   0 T   0.0   0.2   0:00.14 top                       1001 
+  18336 user1     20   0 S   0.0   0.1   0:00.00 bash                      1001 
+  18347 user1     20   0 T   0.0   0.1   0:00.04 top                       1001 
+  18435 user1     20   0 S   0.0   0.1   0:00.00 bash                      1001 
+  18442 user1     20   0 T   0.0   0.3   0:00.01 vim                       1001 
+  18445 user1     30  10 S   0.0   0.1   0:00.00 sleep                     1001
+
+Видим, что поле NI у процесса sleep изменилось с 0 на 10
+
+root@eltex-practice2-pg1-v17:/home/user1# jobs
+#[1]-  Stopped                 vim ~/file_task3.txt
+#[2]+  Running                 sleep 600
+
+#Сделаем задание vim ~/file_task3.txt активным и выйдем из редактора
+root@eltex-practice2-pg1-v17:/home/user1# fg %1
+#vim ~/file_task3.txt
+
+#Узнаем PID процесса sleep 600 и пошлем ему сигнал 15 (SIGTERM)
+
+
+Tasks: 108 total,   1 running, 107 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st 
+MiB Mem :   3916.0 total,   2880.6 free,    454.0 used,    862.6 buff/cache     
+MiB Swap:   3185.0 total,   3185.0 free,      0.0 used.   3462.0 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND  
+    528 systemd+  20   0   18996   9472   8320 S   0.0   0.2   0:07.12 systemd+ 
+    701 root      20   0   18140   8704   7808 S   0.0   0.2   0:00.63 systemd+ 
+    306 root      19  -1   66848  29008  27856 S   0.0   0.7   0:02.33 systemd+ 
+      1 root      20   0   22236  13224   9384 S   0.0   0.3   0:07.40 systemd  
+  23482 root      20   0   20272  11392   9344 S   0.0   0.3   0:00.06 systemd  
+    859 root      20   0   12020   7808   6784 S   0.0   0.2   0:00.01 sshd     
+  23477 root      20   0   14976   8692   6784 S   0.0   0.2   0:00.43 sshd     
+  23725 root      20   0    5684   2048   2048 S   0.0   0.1   0:00.00 sleep    
+
+root@eltex-practice2-pg1-v17:/home/user1# kill -s 15 23725
+root@eltex-practice2-pg1-v17:/home/user1# jobs
+#[1]+  Terminated              sleep 600
+
+root@eltex-practice2-pg1-v17:/home/user1# trap 'echo "Меня голыми руками не возмешь!"' SIGQUIT
+root@eltex-practice2-pg1-v17:/home/user1# trap 'echo "Меня голыми руками не возмешь!"' SIGINT
+
+#Меня голыми руками не возмешь!home/user1# ^C
+
+#Меня голыми руками не возмешь!home/user1# ^\
