@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 void menu()
 {
@@ -24,7 +25,7 @@ float mult(float a, float b)
 }
 float divide(float a, float b)
 {
-    return (b==0 ? nan : a/b);
+    return (b==0 ? NAN : a/b);
 }
 
 int main()

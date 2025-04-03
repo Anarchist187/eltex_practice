@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <math.h>
 
 void menu()
 {
@@ -39,7 +40,7 @@ float divide(float numbers[], int numArgs)
         if (numbers[i] != 0)
             result /= numbers[i];
         else
-            return 0;
+            return NAN;
     }
     return result;
 }
