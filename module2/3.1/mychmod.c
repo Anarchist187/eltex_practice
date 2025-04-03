@@ -5,6 +5,7 @@
 #include <time.h>
 #include <sys/stat.h>
 #include <sys/types.h>
+#include <math.h>
 
 void int_to_bin(unsigned int in, int count, int* out) {
     unsigned int mask = 1U << (count - 1);
@@ -19,20 +20,22 @@ void countRightsBin(int str, char* out) {
     int bin[3];
     int cnt=0;
     for (int i = 0; i < 3; i++) {
-        int_to_bin(str % 10, 3, bin);
+        int_to_bin(str /pow(10,2-i), 3, bin);
         for (int j = 0; j < 3; j++)
         {
             out[cnt] = bin[j] ? '1' : '0';
             cnt++;
         }
-        str /= 10;
+        str %= (i==0 ? 100 : i==1 ? 10 : 1);
     }
+    out[9]='\0';
 }
 
 void countBinRightsFromChar(char* str, char* out){
     const char *template="rwx";
     for (int i=0;i<9;i++)
         out[i]=(strchr(template,str[i])) ? '1' : '0';
+        out[9]='\0';
 }
 
 void statToBinSymb (mode_t rights, char* outBin, char* outSymb)
@@ -141,8 +144,8 @@ int main(int argc, char* argv[]){
         if (*ptr == '\0'){
             int UB = atoi(argv[1]);
             countRightsBin(UB, binary_int);
-            for (int i=0;i<9;i++)
-                printf("%d", binary_int[i]);
+            //for (int i=8;i>=0;i--)
+                printf("%s", binary_int);
         } 
         else {
             if (strlen(argv[1])!=9) {
@@ -158,8 +161,8 @@ int main(int argc, char* argv[]){
                     char binary_char[10];
                     char *perm_ch = argv[1];
                     countBinRightsFromChar(perm_ch, binary_char);
-                    for (int i=0;i<9;i++)
-                        printf("%d", binary_char[i]);
+                    //for (int i=0;i<9;i++)
+                    printf("%s", binary_char);
                 }
         }
     }
@@ -178,6 +181,6 @@ int main(int argc, char* argv[]){
         statToBinSymb(rights, permBin,permSymb);
         printf("Modified string permissions: %s\n", permSymb);
         printf("Modified binary permissions: %s\n", permBin);
-        printf("Modified decimal permissions: %d",statToDec(rights)); 
+        printf("Modified decimal permissions: %d\n",statToDec(rights)); 
         }
 }

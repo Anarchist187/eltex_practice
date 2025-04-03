@@ -34,7 +34,7 @@ int main(int argc, char *argv[]){
     uint32_t uintmask=ip_to_uint32(subnet_mask);
     for (int i=0;i<generate_number;i++){
         for (int j=0;j<4;j++){
-            uint8_t octet = (uint8_t)(rand()%170);
+            uint8_t octet = (uint8_t)(rand()%255);
             ip=(ip<<8)|octet;
         }
         isInSubnetCount+=isInSubnet(ip,uintip,uintmask);

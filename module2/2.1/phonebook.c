@@ -62,10 +62,10 @@ int main()
     int count = 0;
     int action = 0;
     int indexId = 0;
-    char *pfirstName;
-    char *plastName;
-    char *pphoneNumb;
-    char *pemailAddr;
+    char pfirstName[20];
+    char plastName[20];
+    char pphoneNumb[20];
+    char pemailAddr[20];
    // setlocale(LC_ALL, "Russian");
 while (1){
     menu();
@@ -76,8 +76,10 @@ while (1){
         {
             printf("\nEnter first name: \n");
             scanf("%s", &pfirstName);
+            fseek(stdin, 0, SEEK_END);
             printf("Enter second name: \n");
             scanf("%s", &plastName);
+            fseek(stdin, 0, SEEK_END);
             addPoint:
             printf("Wanna fill in additional fields? (1-y; 2-n) \n");
             scanf("%d", &indexId);
@@ -115,23 +117,33 @@ while (1){
         }
         case 3:
         {
+            delPoint:
             printf("Enter person-to-delete ID: ");
             scanf("%d", &indexId);
             fseek(stdin, 0, SEEK_END);
+            if (indexId>count-1){
+                printf("No person with same ID\n");
+                goto delPoint;
+            }
             deleteperson(indexId, count);
             count--;
             break;
         }
         case 4:
         {
+            editPoint1:
             printf("Enter person-to-edit ID: ");
             scanf("%d", &action);
             fseek(stdin, 0, SEEK_END);
+            if (action>count-1){
+                printf("No person with same ID\n");
+                goto editPoint1;
+            }
             printf("\nEnter first name: \n");
             scanf("%s", &pfirstName);
             printf("Enter second name: \n");
             scanf("%s", &plastName);
-            editPoint:
+            editPoint2:
             printf("Wanna edit additional fields? (1-y 2-n)");
             scanf("%d", &indexId);
             if (indexId==1)
@@ -141,12 +153,10 @@ while (1){
                 printf("Enter email: \n");
                 scanf("%s", &pemailAddr);
             }
-            else if (indexId==2)
-                break;
-            else
+            else if (indexId!=2)
             {
                 printf("Not an option\n");
-                goto editPoint;
+                goto editPoint2;
             }
             editperson(action, indexId, pfirstName, plastName, pphoneNumb, pemailAddr);
             break;

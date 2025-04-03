@@ -24,7 +24,7 @@ float mult(float a, float b)
 }
 float divide(float a, float b)
 {
-    return (b==0 ? 0 : a/b);
+    return (b==0 ? nan : a/b);
 }
 
 int main()
