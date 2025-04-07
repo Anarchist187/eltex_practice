@@ -138,6 +138,82 @@ To https://github.com/Anarchist187/eltex_practice.git
  * [new branch]      main -> main
 branch 'main' set up to track 'origin/main'.
 
+root@eltex-practice2-pg1-v17:~/eltex_practice_clone/eltex_practice# git fetch 
+root@eltex-practice2-pg1-v17:~/eltex_practice_clone/eltex_practice# git log origin/main 
+#commit ce60a27849274693596dbc7fbb2f759a114b6bf6 (HEAD -> main, origin/main, origin/HEAD)
+#Author: anarchist <anarchist@vbox.myguest.virtualbox.org>
+#Date:   Mon Apr 7 14:49:44 2025 +0700
+#
+#    done
+#
+#commit 9cfde9498e9c2535683728c2fb93fb6b497c7206
+#Author: anarchist <anarchist@vbox.myguest.virtualbox.org>
+#Date:   Mon Apr 7 14:44:43 2025 +0700
+#
+#    done
+#
+#commit 28389f6638cc1a7ed40089dd25c0c7a81d86f67b
+#Author: anarchist <anarchist@vbox.myguest.virtualbox.org>
+#Date:   Sun Apr 6 17:15:29 2025 +0700
+#
+#    .
+#
+#commit e2c5ac86b973806af63dcc3701dc6a6c3473d1a7
+#Author: anarchist <anarchist@vbox.myguest.virtualbox.org>
+#Date:   Sun Apr 6 17:12:01 2025 +0700
+#
+#    done
+#
+#commit 6b3dca53ff2c97e3efa0fe1a4a71fbe2445fadc5
+#Author: anarchist <anarchist@vbox.myguest.virtualbox.org>
+#Date:   Thu Apr 3 13:16:36 2025 +0700
+#
+#    .
+#
+#commit ff7312843c7fd46c055d15121fa78b78320c777a
+#Author: anarchist <anarchist@vbox.myguest.virtualbox.org>
+#Date:   Thu Apr 3 13:06:12 2025 +0700
+#
+#    \
+#    .
+#
+#commit 021d437a31fe22e05501128c31e611b224d4869e
+#Author: anarchist <anarchist@vbox.myguest.virtualbox.org>
+#Date:   Sun Mar 30 17:11:27 2025 +0700
+#
+#    module2
+#
+#commit 4bb99ceaece6fa86452451bbaf6a7c6d1c928615
+#Author: Anarchist187 <mxsblnnn@gmail.com>
+#Date:   Fri Mar 21 05:36:44 2025 +0000
+#
+#    unarchieve in /root
+#
+#commit a4cab031f06acd309fe3d0c41329519ab1692d13
+#Author: Anarchist187 <mxsblnnn@gmail.com>
+#Date:   Wed Mar 19 15:00:08 2025 +0000
+#
+#    .
+#
+#commit 32ee3d453d529ba2737a9776f8a8af1ed41c4f21
+#Author: Anarchist187 <mxsblnnn@gmail.com>
+#Date:   Mon Mar 17 06:09:12 2025 +0000
+#
+#    practice1
+#
+#commit adb5aa5871fd622acc68027c69ff9758a67ac5f1
+#Author: Anarchist187 <mxsblnnn@gmail.com>
+#Date:   Sun Mar 16 11:13:24 2025 +0000
+#
+#    Praktika2
+#
+#commit f299f11782178f26291258fde171c4958adaf240
+#Author: Anarchist187 <mxsblnnn@gmail.com>
+#Date:   Sun Mar 16 10:48:43 2025 +0000
+#
+#    first commit
+#
+#
 root@eltex-practice2-pg1-v17:~/eltex_practice# mkdir -p module1/task1
 root@eltex-practice2-pg1-v17:~/eltex_practice# mkdir module1/task2
 root@eltex-practice2-pg1-v17:~/eltex_practice# mkdir module1/task3
