@@ -18,7 +18,7 @@ int main (int argc, char *argv[]){
     struct mq_attr queue_attr;
     queue_attr.mq_maxmsg = 32;
     queue_attr.mq_msgsize=MSG_SIZE;
-    if ((qd=mq_open(QUEUE_NAME, O_CREAT | O_RDWR, 0600, &queue_attr))==(mqd_t)-1){
+    if ((qd=mq_open(QUEUE_NAME, O_CREAT | O_RDWR, S_IRUSR | S_IWUSR, &queue_attr))==(mqd_t)-1){
         perror ("Error mq_open");
         exit(EXIT_FAILURE);
     }

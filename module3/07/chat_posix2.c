@@ -16,7 +16,7 @@ int main (int argc, char *argv[]){
     char text[MSG_SIZE];
     char newtext[MSG_SIZE];
     struct mq_attr attr, old_attr;
-        if ((qd=mq_open(QUEUE_NAME, O_RDWR, 0600, NULL))==(mqd_t)-1){
+        if ((qd=mq_open(QUEUE_NAME, O_RDWR, S_IRUSR | S_IWUSR, NULL))==(mqd_t)-1){
         perror ("Error mq_open");
         exit(EXIT_FAILURE);
     }

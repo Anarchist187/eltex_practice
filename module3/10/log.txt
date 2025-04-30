@@ -1,36 +1,62 @@
 Child blocked access
 Child unblocked access
-Child sent: 1643
-Child blocked access
-Child unblocked access
-Child sent: 5173
-Child blocked access
-Child unblocked access
-Child sent: 4751
-Child blocked access
-Child unblocked access
-Child sent: 8822
-Child blocked access
-Child unblocked access
-Child sent: 6574
-Child blocked access
-Child unblocked access
-Child sent: 6258
-Parent received: 1643
+Parent received: 1057
 Parent blocked file access
 Parent unblocked file access
-Parent received: 5173
+Child sent: 1057
+Child blocked access
+Child unblocked access
+Child got: 1057
+
+Child sent: 5022
+Child blocked access
+Child unblocked access
+Child got: 1057
+
+Child sent: 3661
+Child blocked access
+Child unblocked access
+Child got: 1057
+
+Child sent: 7491
+Child blocked access
+Child unblocked access
+Child got: 1057
+
+Child sent: 9508
+Child blocked access
+Child unblocked access
+Child got: 1057
+
+Child sent: 724
+Child blocked access
+Child unblocked access
+Child got: 1057
+
+Child sent: 5262
+Child blocked access
+Child unblocked access
+Child got: 1057
+
+Child sent: 9911
+Parent received: 5022
 Parent blocked file access
 Parent unblocked file access
-Parent received: 4751
+Parent received: 3661
 Parent blocked file access
 Parent unblocked file access
-Parent received: 8822
+Parent received: 7491
 Parent blocked file access
 Parent unblocked file access
-Parent received: 6574
+Parent received: 9508
 Parent blocked file access
 Parent unblocked file access
-Parent received: 6258
+Parent received: 724
+Parent blocked file access
+Parent unblocked file access
+Parent received: 5262
+Parent blocked file access
+Parent unblocked file access
+Parent received: 9911
 Parent blocked file access
 Parent unblocked file access
