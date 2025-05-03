@@ -8,6 +8,7 @@
 #include <netdb.h>
 #include <math.h>
 
+
 #define BUF_SIZE 256
 
 int nclients;
