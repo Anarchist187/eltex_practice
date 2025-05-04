@@ -13,7 +13,7 @@
 #define LOG_NAME "log.txt"
 #define SEM_NAME "/my_sem"
 #define RW_SEM_NAME "/my_rw_sem"
-#define WRITER_SEM_NAME "/my_writer_sem"
+#define WRITER_SEM_NAME "/my_write_sem"
 
 sem_t *sem;//2
 sem_t *rw_sem;//1
@@ -23,7 +23,9 @@ int *sem_val;
 void reader_lock(){
     sem_wait(rw_sem);
     sem_post(rw_sem);
+    printf("asd\n");
     sem_wait(writer_sem);
+    printf("zzz\n");
     sem_getvalue(sem,sem_val);
     if (*sem_val==0){
         sem_wait(rw_sem);
@@ -96,9 +98,9 @@ int main (int argc, char *argv[]){
             close(pipe_fd[0]);
             srand(time(NULL)^getpid());
             for (int j=0;j<3;j++){
-                sleep (rand() % 3 + 1);
-                printf("asd\n");
+                //sleep (rand() % 3 + 1);
                 reader_lock();
+        
                 snprintf(log_ms,sizeof(log_ms),"Child %d blocked access\n",i+1);
                 write(fd_log,log_ms,strlen(log_ms));
                 fd=open(FILE_NAME,O_RDONLY);

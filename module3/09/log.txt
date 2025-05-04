@@ -1,208 +1,131 @@
-Reader 3 (PID=4517) blocked access
-Reader 3 (PID=4517) unlocked access
-Reader 3 (PID=4517) sent: 9200
-Parent received: 9200
+Reader 1 (PID=10757) blocked access
+Reader 1 (PID=10757) unlocked access
+Reader 1 (PID=10757) sent: 8916
+Parent received: 8916
 Parent blocked file access
 Parent unblocked file access
-Reader 3 (PID=4517) blocked access
-Reader 3 (PID=4517) read: 
-9200
+Reader 3 (PID=10759) blocked access
+Reader 3 (PID=10759) read: 
+8916
 
-Reader 3 (PID=4517) unlocked access
-Reader 3 (PID=4517) sent: 2519
-Parent received: 2519
+Reader 3 (PID=10759) unlocked access
+Reader 3 (PID=10759) sent: 269
+Parent received: 269
 Parent blocked file access
 Parent unblocked file access
-Reader 1 (PID=4515) blocked access
-Reader 1 (PID=4515) read: 
-9200
-2519
+Reader 2 (PID=10758) blocked access
+Reader 2 (PID=10758) read: 
+8916
+269
 
-Reader 1 (PID=4515) unlocked access
-Reader 1 (PID=4515) sent: 4725
-Parent received: 4725
+Reader 2 (PID=10758) unlocked access
+Reader 2 (PID=10758) sent: 262
+Parent received: 262
 Parent blocked file access
 Parent unblocked file access
-Reader 2 (PID=4516) blocked access
-Reader 2 (PID=4516) read: 
-9200
-2519
-4725
+Reader 3 (PID=10759) blocked access
+Reader 3 (PID=10759) read: 
+8916
+269
+262
 
-Reader 2 (PID=4516) unlocked access
-Reader 2 (PID=4516) sent: 5361
-Parent received: 5361
+Reader 3 (PID=10759) unlocked access
+Reader 3 (PID=10759) sent: 7505
+Parent received: 7505
 Parent blocked file access
 Parent unblocked file access
-Reader 1 (PID=4515) blocked access
-Reader 1 (PID=4515) read: 
-9200
-2519
-4725
-5361
+Reader 1 (PID=10757) blocked access
+Reader 1 (PID=10757) read: 
+8916
+269
+262
+7505
 
-Reader 1 (PID=4515) unlocked access
-Reader 1 (PID=4515) sent: 782
-Parent received: 782
+Reader 1 (PID=10757) unlocked access
+Reader 1 (PID=10757) sent: 3749
+Parent received: 3749
 Parent blocked file access
 Parent unblocked file access
-Reader 3 (PID=4517) blocked access
-Reader 3 (PID=4517) read: 
-9200
-2519
-4725
-5361
-782
+Reader 2 (PID=10758) blocked access
+Reader 2 (PID=10758) read: 
+8916
+269
+262
+7505
+3749
 
-Reader 3 (PID=4517) unlocked access
-Reader 3 (PID=4517) sent: 3646
-Parent received: 3646
+Reader 2 (PID=10758) unlocked access
+Reader 2 (PID=10758) sent: 124
+Parent received: 124
 Parent blocked file access
 Parent unblocked file access
-Reader 2 (PID=4516) blocked access
-Reader 2 (PID=4516) read: 
-9200
-2519
-4725
-5361
-782
-3646
+Reader 3 (PID=10759) blocked access
+Reader 3 (PID=10759) read: 
+8916
+269
+262
+7505
+3749
+124
 
-Reader 2 (PID=4516) unlocked access
-Reader 2 (PID=4516) sent: 2385
-Parent received: 2385
+Reader 3 (PID=10759) unlocked access
+Reader 3 (PID=10759) sent: 5979
+Reader 1 (PID=10757) blocked access
+Reader 1 (PID=10757) read: 
+8916
+269
+262
+7505
+3749
+124
+
+Reader 1 (PID=10757) unlocked access
+Reader 1 (PID=10757) sent: 9435
+Parent received: 5979
 Parent blocked file access
 Parent unblocked file access
-Reader 1 (PID=4515) blocked access
-Reader 1 (PID=4515) read: 
-9200
-2519
-4725
-5361
-782
-3646
-2385
-
-Reader 1 (PID=4515) unlocked access
-Reader 1 (PID=4515) sent: 9283
-Parent received: 9283
+Parent received: 9435
 Parent blocked file access
 Parent unblocked file access
-Reader 3 (PID=4517) blocked access
-Reader 3 (PID=4517) read: 
-9200
-2519
-4725
-5361
-782
-3646
-2385
-9283
+Reader 3 (PID=10759) blocked access
+Reader 3 (PID=10759) read: 
+8916
+269
+262
+7505
+3749
+124
+5979
+9435
 
-Reader 3 (PID=4517) unlocked access
-Reader 3 (PID=4517) sent: 8535
-Parent received: 8535
+Reader 3 (PID=10759) unlocked access
+Reader 3 (PID=10759) sent: 9972
+Parent received: 9972
 Parent blocked file access
 Parent unblocked file access
-Reader 2 (PID=4516) blocked access
-Reader 2 (PID=4516) read: 
-9200
-2519
-4725
-5361
-782
-3646
-2385
-9283
-8535
+Reader 2 (PID=10758) blocked access
+Reader 2 (PID=10758) read: 
+8916
+269
+262
+7505
+3749
+124
+5979
+9435
+9972
 
-Reader 2 (PID=4516) unlocked access
-Reader 2 (PID=4516) sent: 8215
-Parent received: 8215
-Parent blocked file access
-Parent unblocked file access
-Reader 1 (PID=4515) blocked access
-Reader 1 (PID=4515) read: 
-9200
-2519
-4725
-5361
-782
-3646
-2385
-9283
-8535
-8215
+Reader 2 (PID=10758) unlocked access
+Reader 1 (PID=10757) blocked access
+Reader 1 (PID=10757) read: 
+8916
+269
+262
+7505
+3749
+124
+5979
+9435
+9972
 
-Reader 1 (PID=4515) unlocked access
-Parent received: 184
-Reader 1 (PID=4515) sent: 184
-Parent blocked file access
-Parent unblocked file access
-Reader 2 (PID=4516) blocked access
-Reader 2 (PID=4516) read: 
-9200
-2519
-4725
-5361
-782
-3646
-2385
-9283
-8535
-8215
-184
-
-Reader 2 (PID=4516) unlocked access
-Reader 2 (PID=4516) sent: 9038
-Parent received: 9038
-Parent blocked file access
-Parent unblocked file access
-Reader 1 (PID=4515) blocked access
-Reader 1 (PID=4515) read: 
-9200
-2519
-4725
-5361
-782
-3646
-2385
-9283
-8535
-8215
-184
-9038
-
-Reader 1 (PID=4515) unlocked access
-Reader 3 (PID=4517) blocked access
-Reader 3 (PID=4517) read: 
-9200
-2519
-4725
-5361
-782
-3646
-2385
-9283
-8535
-8215
-184
-9038
-
-Reader 3 (PID=4517) unlocked access
-Reader 2 (PID=4516) blocked access
-Reader 2 (PID=4516) read: 
-9200
-2519
-4725
-5361
-782
-3646
-2385
-9283
-8535
-8215
-184
-9038
-
-Reader 2 (PID=4516) unlocked access
+Reader 1 (PID=10757) unlocked access
