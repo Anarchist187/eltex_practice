@@ -1,0 +1,291 @@
+Writer wrote: 11
+
+Reader 2 read: 
+Writer wrote: 11
+
+-------------
+
+Reader 3 read: 
+Writer wrote: 11
+
+-------------
+
+Reader 1 read: 
+Writer wrote: 11
+
+-------------
+Writer wrote: 2
+
+Reader 2 read: 
+Writer wrote: 11
+Writer wrote: 2
+
+-------------
+
+Reader 3 read: 
+Writer wrote: 11
+Writer wrote: 2
+
+-------------
+Writer wrote: 37
+Writer wrote: 64
+Writer wrote: 8
+
+Reader 1 read: 
+Writer wrote: 11
+Writer wrote: 2
+Writer wrote: 37
+Writer wrote: 64
+Writer wrote: 8
+
+-------------
+
+Reader 2 read: 
+Writer wrote: 11
+Writer wrote: 2
+Writer wrote: 37
+Writer wrote: 64
+Writer wrote: 8
+
+-------------
+Writer wrote: 11
+
+Reader 3 read: 
+Writer wrote: 11
+Writer wrote: 2
+Writer wrote: 37
+Writer wrote: 64
+Writer wrote: 8
+Writer wrote: 11
+
+-------------
+Writer wrote: 16
+
+Reader 1 read: 
+Writer wrote: 11
+Writer wrote: 2
+Writer wrote: 37
+Writer wrote: 64
+Writer wrote: 8
+Writer wrote: 11
+Writer wrote: 16
+
+-------------
+
+Reader 2 read: 
+Writer wrote: 11
+Writer wrote: 2
+Writer wrote: 37
+Writer wrote: 64
+Writer wrote: 8
+Writer wrote: 11
+Writer wrote: 16
+
+-------------
+
+Reader 1 read: 
+Writer wrote: 11
+Writer wrote: 2
+Writer wrote: 37
+Writer wrote: 64
+Writer wrote: 8
+Writer wrote: 11
+Writer wrote: 16
+
+-------------
+
+Reader 1 read: 
+Writer wrote: 11
+Writer wrote: 2
+Writer wrote: 37
+Writer wrote: 64
+Writer wrote: 8
+Writer wrote: 11
+Writer wrote: 16
+
+-------------
+
+Reader 3 read: 
+Writer wrote: 11
+Writer wrote: 2
+Writer wrote: 37
+Writer wrote: 64
+Writer wrote: 8
+Writer wrote: 11
+Writer wrote: 16
+
+-------------
+
+Reader 3 read: 
+Writer wrote: 11
+Writer wrote: 2
+Writer wrote: 37
+Writer wrote: 64
+Writer wrote: 8
+Writer wrote: 11
+Writer wrote: 16
+
+-------------
+
+Reader 2 read: 
+Writer wrote: 11
+Writer wrote: 2
+Writer wrote: 37
+Writer wrote: 64
+Writer wrote: 8
+Writer wrote: 11
+Writer wrote: 16
+
+-------------
+Writer wrote: 19
+
+Reader 2 read: 
+Writer wrote: 11
+Writer wrote: 2
+Writer wrote: 37
+Writer wrote: 64
+Writer wrote: 8
+Writer wrote: 11
+Writer wrote: 16
+Writer wrote: 19
+
+-------------
+
+Reader 1 read: 
+Writer wrote: 11
+Writer wrote: 2
+Writer wrote: 37
+Writer wrote: 64
+Writer wrote: 8
+Writer wrote: 11
+Writer wrote: 16
+Writer wrote: 19
+
+-------------
+
+Reader 3 read: 
+Writer wrote: 11
+Writer wrote: 2
+Writer wrote: 37
+Writer wrote: 64
+Writer wrote: 8
+Writer wrote: 11
+Writer wrote: 16
+Writer wrote: 19
+
+-------------
+
+Reader 2 read: 
+Writer wrote: 11
+Writer wrote: 2
+Writer wrote: 37
+Writer wrote: 64
+Writer wrote: 8
+Writer wrote: 11
+Writer wrote: 16
+Writer wrote: 19
+
+-------------
+
+Reader 2 read: 
+Writer wrote: 11
+Writer wrote: 2
+Writer wrote: 37
+Writer wrote: 64
+Writer wrote: 8
+Writer wrote: 11
+Writer wrote: 16
+Writer wrote: 19
+
+-------------
+
+Reader 3 read: 
+Writer wrote: 11
+Writer wrote: 2
+Writer wrote: 37
+Writer wrote: 64
+Writer wrote: 8
+Writer wrote: 11
+Writer wrote: 16
+Writer wrote: 19
+
+-------------
+Writer wrote: 23
+
+Reader 3 read: 
+Writer wrote: 11
+Writer wrote: 2
+Writer wrote: 37
+Writer wrote: 64
+Writer wrote: 8
+Writer wrote: 11
+Writer wrote: 16
+Writer wrote: 19
+Writer wrote: 23
+
+-------------
+
+Reader 1 read: 
+Writer wrote: 11
+Writer wrote: 2
+Writer wrote: 37
+Writer wrote: 64
+Writer wrote: 8
+Writer wrote: 11
+Writer wrote: 16
+Writer wrote: 19
+Writer wrote: 23
+
+-------------
+
+Reader 3 read: 
+Writer wrote: 11
+Writer wrote: 2
+Writer wrote: 37
+Writer wrote: 64
+Writer wrote: 8
+Writer wrote: 11
+Writer wrote: 16
+Writer wrote: 19
+Writer wrote: 23
+
+-------------
+
+Reader 2 read: 
+Writer wrote: 11
+Writer wrote: 2
+Writer wrote: 37
+Writer wrote: 64
+Writer wrote: 8
+Writer wrote: 11
+Writer wrote: 16
+Writer wrote: 19
+Writer wrote: 23
+
+-------------
+
+Reader 1 read: 
+Writer wrote: 11
+Writer wrote: 2
+Writer wrote: 37
+Writer wrote: 64
+Writer wrote: 8
+Writer wrote: 11
+Writer wrote: 16
+Writer wrote: 19
+Writer wrote: 23
+
+-------------
+
+Reader 1 read: 
+Writer wrote: 11
+Writer wrote: 2
+Writer wrote: 37
+Writer wrote: 64
+Writer wrote: 8
+Writer wrote: 11
+Writer wrote: 16
+Writer wrote: 19
+Writer wrote: 23
+
+-------------
