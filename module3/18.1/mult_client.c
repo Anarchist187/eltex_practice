@@ -43,38 +43,56 @@ int main() {
     }
 
     printf("Подключено к серверу %s:%d\n", SERVER_IP, SERVER_PORT);
+
     //Receiving request for operation
     ssize_t num_bytes = recv(tcp_sock, buffer, sizeof(buffer) - 1, 0);
     if (num_bytes <= 0) {
         perror("recv");
     }
     buffer[num_bytes] = '\0';  // Завершаем строку
-    printf("%s\n", buffer);
-    while (1){
-        // Ввод сообщения от пользователя
-        fgets(buffer, sizeof(buffer), stdin);
-        buffer[strcspn(buffer, "\n")] = 0;
-        // Проверка на выход
-        if (strcmp(buffer, "exit") == 0) {
-            num_bytes=send(tcp_sock,&buffer,strlen(buffer),0);
-            if (num_bytes<0){
-                error("Error send");
-            }
-            break;
-        }
-        num_bytes=send(tcp_sock,&buffer,strlen(buffer),0);
-        if (num_bytes<0){
-            error("Error send");
-        }
-        //Receiving invitation for 1-st arg
-        memset(&buffer,0,sizeof(buffer));
-        num_bytes=recv(tcp_sock, &buffer,sizeof(buffer)-1,0);
-        if (num_bytes<0){
-            error("Error recv");
-        }
-        buffer[num_bytes] = '\0';
-        printf("%s\n",buffer);
+    printf("Server: %s\n", buffer);
+    // Ввод сообщения от пользователя
+    fgets(buffer, sizeof(buffer), stdin);
+    num_bytes=send(tcp_sock,&buffer,strlen(buffer),0);
+    if (num_bytes<0){
+        error("Error write");
     }
+    //Receiving invitation for 1-st arg
+    memset(&buffer,0,sizeof(buffer));
+    num_bytes=recv(tcp_sock, &buffer,sizeof(buffer)-1,0);
+    if (num_bytes<0){
+        error("Error recv");
+    }
+    printf("%s\n",buffer);
+    
+    //Entering 1-st arg
+    memset(&buffer,0,sizeof(buffer));
+    fgets(buffer,BUFFER_SIZE-1,stdin);
+    num_bytes=send(tcp_sock,&buffer,strlen(buffer),0);
+    if (num_bytes<0){
+        error("Error send");
+    }
+    //Receiving invitation for 2-nd arg
+    memset(&buffer,0,sizeof(buffer));
+    num_bytes=recv(tcp_sock, &buffer,sizeof(buffer)-1,0);
+    if (num_bytes<0){
+        error("Error recv");
+    }
+    printf("%s\n",buffer);
+    //Entering 2-nd arg
+    memset(&buffer,0,sizeof(buffer));
+    fgets(buffer,BUFFER_SIZE-1,stdin);
+    num_bytes=send(tcp_sock,&buffer,strlen(buffer),0);
+    if (num_bytes<0){
+        error("Error send");
+    }
+    //Receiving result
+    memset(&buffer,0,sizeof(buffer));
+    num_bytes=recv(tcp_sock, &buffer,sizeof(buffer)-1,0);
+    if (num_bytes<0){
+        error("Error recv");
+    }
+    printf("%s\n",buffer);
 
     // Закрытие сокета
     close(tcp_sock);

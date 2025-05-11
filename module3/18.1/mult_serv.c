@@ -5,7 +5,6 @@
 #include <arpa/inet.h>
 #include <sys/epoll.h>
 #include <math.h>
-#include <ctype.h>
 
 #define PORT 8888
 #define MAX_EVENTS 10
@@ -35,8 +34,8 @@ int main() {
     float a,b,result;
     struct epoll_event event;
     struct epoll_event events[MAX_EVENTS];
-    char buffer[BUFFER_SIZE],action, *istr;
-    const char *welcome_message = "Server: Enter string of format:<operation (+ - / *)> <arg1> <arg2>\n";
+    char buffer[BUFFER_SIZE],action;
+    const char *welcome_message = "Server: Enter action (+ - * /): \n";
 
     // Создание сокета
     if ((server_fd = socket(AF_INET, SOCK_STREAM, 0)) == -1) {
@@ -108,42 +107,31 @@ int main() {
                 } 
                 buffer[bytes_received] = '\0';  // Завершаем строку
                 printf("Received from client: %s\n", buffer);
-                if (strcmp(buffer, "exit") == 0) {
-                    close(events[i].data.fd);
-                    printf("Client disconnected.\n");
-                    continue;
+                action=buffer[0];
+                if(send(events[i].data.fd,"Server: Enter 1st arg: ", 23,0)<0){
+                    perror("Error send");
+                    exit(EXIT_FAILURE);
                 }
-                istr = strtok(buffer," ");
-                if (istr!=NULL){
-                    if (isdigit(*istr)){
-                        action=*istr;
-                    }
-                } else{
-                    close(events[i].data.fd);
-                    printf("Client disconnected.\n");
-                    continue;
+                bytes_received=recv(events[i].data.fd, buffer, sizeof(buffer) - 1, 0);
+                if (bytes_received<0){
+                    perror("Error recv");
+                    exit(EXIT_FAILURE);
                 }
-                action = *istr;
-                istr = strtok(NULL," ");
-                if (istr!=NULL){
-                    if (isdigit(*istr)){
-                        a=atof(istr);
-                    }
-                } else{
-                    close(events[i].data.fd);
-                    printf("Client disconnected.\n");
-                    continue;
+                buffer[bytes_received]='\0';
+                printf("Received from client: %s\n", buffer);
+                a=atoi(buffer);
+                if(send(events[i].data.fd,"Server: Enter 2nd arg: ", 23,0)<0){
+                    perror("Error send");
+                    exit(EXIT_FAILURE);
                 }
-                istr = strtok(NULL," ");
-                if (istr!=NULL){
-                    if (isdigit(*istr)){
-                        b=atof(istr);
-                    }
-                } else{
-                    close(events[i].data.fd);
-                    printf("Client disconnected.\n");
-                    continue;
+                bytes_received=recv(events[i].data.fd, buffer, sizeof(buffer) - 1, 0);
+                if (bytes_received<0){
+                    perror("Error recv");
+                    exit(EXIT_FAILURE);
                 }
+                buffer[bytes_received]='\0';
+                printf("Received from client: %s\n", buffer);
+                b=atoi(buffer);
                 switch (action){
                     case '+': result=sum(a,b); break;
                     case '-': result=sub(a,b);break;
@@ -155,16 +143,15 @@ int main() {
                             exit(EXIT_FAILURE);
                         }
                         close(events[i].data.fd);
-                        printf("Client disconnected.\n");
                         continue;
                 }
                 snprintf(buffer,sizeof(buffer),"Server: Result: %.2f",result);
-                if(send(events[i].data.fd, buffer, sizeof(buffer)-1, 0) < 0){
+                if(send(events[i].data.fd, buffer, sizeof(buffer), 0) < 0){
                     perror("Error send");
                     exit(EXIT_FAILURE);
                 }
                 printf("Sent to client: %f\n", result);
-                //close(events[i].data.fd);
+                close(events[i].data.fd);
             }
         }
     }
