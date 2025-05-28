@@ -1,0 +1,44 @@
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2025.05.19 11:11:46 =~=~=~=~=~=~=~=~=~=~=~=
+ip 192.168.1.4              ping 192.168.1.2
+
+84 bytes from 192.168.1.2 icmp_seq=1 ttl=64 time=7.488 ms
+84 bytes from 192.168.1.2 icmp_seq=2 ttl=64 time=5.224 ms
+84 bytes from 192.168.1.2 icmp_seq=3 ttl=64 time=10.521 ms
+84 bytes from 192.168.1.2 icmp_seq=4 ttl=64 time=10.955 ms
+^C
+PC3> ping 192.168.1.2 4 3
+
+84 bytes from 192.168.1.3 icmp_seq=1 ttl=64 time=8.490 ms
+84 bytes from 192.168.1.3 icmp_seq=2 ttl=64 time=17.808 ms
+84 bytes from 192.168.1.3 icmp_seq=3 ttl=64 time=19.101 ms
+^C
+PC3> ping 192.168.1.3 4
+
+192.168.1.4 icmp_seq=1 ttl=64 time=0.001 ms
+192.168.1.4 icmp_seq=2 ttl=64 time=0.001 ms
+192.168.1.4 icmp_seq=3 ttl=64 time=0.001 ms
+192.168.1.4 icmp_seq=4 ttl=64 time=0.001 ms
+192.168.1.4 icmp_seq=5 ttl=64 time=0.001 ms
+
+PC3> ping 192.168.1.4 5
+
+84 bytes from 192.168.1.5 icmp_seq=1 ttl=64 time=2.066 ms
+84 bytes from 192.168.1.5 icmp_seq=2 ttl=64 time=12.628 ms
+84 bytes from 192.168.1.5 icmp_seq=3 ttl=64 time=7.528 ms
+84 bytes from 192.168.1.5 icmp_seq=4 ttl=64 time=4.353 ms
+^C
+PC3> ping 192.168.1.5 6
+
+84 bytes from 192.168.1.6 icmp_seq=1 ttl=64 time=8.765 ms
+84 bytes from 192.168.1.6 icmp_seq=2 ttl=64 time=12.953 ms
+84 bytes from 192.168.1.6 icmp_seq=3 ttl=64 time=3.480 ms
+84 bytes from 192.168.1.6 icmp_seq=4 ttl=64 time=11.248 ms
+^C
+PC3> ping 192.168.1.6 7
+
+84 bytes from 192.168.1.7 icmp_seq=1 ttl=64 time=15.128 ms
+84 bytes from 192.168.1.7 icmp_seq=2 ttl=64 time=5.046 ms
+84 bytes from 192.168.1.7 icmp_seq=3 ttl=64 time=21.522 ms
+84 bytes from 192.168.1.7 icmp_seq=4 ttl=64 time=3.374 ms
+^C
+PC3> 
